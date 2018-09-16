@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import SkulltulaList from "./skulltula-list";
+
 class App extends React.Component {
   render() {
     return (
-      <button className="test">
-        {/* TODO */}
-      </button>
+      <div>
+        <SkulltulaList />
+      </div>
     )
   }
 }
