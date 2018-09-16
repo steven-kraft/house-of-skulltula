@@ -1,0 +1,29 @@
+@font-face {
+    font-family: chiaro;
+    src: url(/assets/chiaro.otf);
+}
+
+body {
+  background: url("/assets/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-family: chiaro;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}

@@ -7,7 +7,8 @@ import SkulltulaList from "./skulltula-list";
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div id="content">
+        <h1>House of Skulltula</h1>
         <SkulltulaList />
       </div>
     )

@@ -1,0 +1,13 @@
+#skulltula-list {
+    padding: 0;
+    max-width: 1000px;
+    min-width: 700px;
+    -webkit-column-count: 10;
+       -moz-column-count: 10;
+            column-count: 10;
+    list-style: none;
+}
+
+#skulltula-listli {
+    display: inline-block; /*necessary*/
+}

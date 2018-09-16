@@ -1,6 +1,10 @@
 import React from 'react';
 import './skulltula-token.css';
 
+var activate_sound = new Audio('/assets/skulltula.wav');
+var deactivate_sound = new Audio('/assets/deselect.wav');
+console.log("test")
+
 class SkulltulaToken extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +16,8 @@ class SkulltulaToken extends React.Component {
     this.setState(state => ({
       isToggleOn: !state.isToggleOn
     }));
-    console.log(this.props.title)
+    if (!this.state.isToggleOn) {activate_sound.play();}
+    else {deactivate_sound.play();}
   }
 
   render() {
@@ -21,7 +26,7 @@ class SkulltulaToken extends React.Component {
       className += ' inactive'
     }
     return (
-      <img src="./assets/token.png" alt="test" className={className} onClick={this.handleClick} />
+      <img src="./assets/token.png" alt="" className={className} onClick={this.handleClick} />
     )
   }
 }

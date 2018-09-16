@@ -15,9 +15,9 @@ class SkulltulaTooltip extends React.Component {
         const el = document.createElement('div')
         ReactDOM.render(
           <div>
-            <h2>Skulltula #01</h2>
-            <img src="./assets/temp.jpg" class="tippy" alt=""/>
-            <p>After finishing the first dungeon, return to Kokiri Forest at night and find the spider on the back of the Know it all Brothers’ house.</p>
+            <h2>Skulltula #{this.props.id} - {this.props.title}</h2>
+            <img src="./assets/temp.jpg" className="tippy" alt=""/>
+            <p>{this.props.content}</p>
           </div> ,el );
         return el
       }
