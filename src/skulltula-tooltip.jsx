@@ -16,7 +16,7 @@ class SkulltulaTooltip extends React.Component {
         ReactDOM.render(
           <div>
             <h2>Skulltula #{this.props.id} - {this.props.title}</h2>
-            <img src="./assets/temp.jpg" className="tippy" alt=""/>
+            <img src={"./assets/skulltulas/skulltula-" + this.props.id + ".jpg"} className="tippy" alt=""/>
             <p>{this.props.content}</p>
           </div> ,el );
         return el
