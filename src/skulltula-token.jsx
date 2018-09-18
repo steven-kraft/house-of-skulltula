@@ -16,8 +16,12 @@ class SkulltulaToken extends React.Component {
     this.setState(state => ({
       isToggleOn: !state.isToggleOn
     }));
-    if (!this.state.isToggleOn) {activate_sound.play();}
-    else {deactivate_sound.play();}
+    if (!this.state.isToggleOn) {
+      activate_sound.play();
+    }
+    else {
+      deactivate_sound.play();
+    }
   }
 
   render() {

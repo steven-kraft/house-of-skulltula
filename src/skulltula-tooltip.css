@@ -1,5 +1,8 @@
-.tippy {padding: 10px}
+.tippy {padding: 0 10px}
 
 h2 {
     font-family: chiaro;
+    margin-bottom: 5px;
 }
+
+.icons {display:inline-flex;}

@@ -1,10 +1,14 @@
 #skulltula-list {
+    margin: auto;
     padding: 0;
-    max-width: 1000px;
-    min-width: 700px;
-    -webkit-column-count: 10;
-       -moz-column-count: 10;
-            column-count: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    max-width: 800px;
     list-style: none;
 }
 

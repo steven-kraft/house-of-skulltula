@@ -8,6 +8,25 @@ class SkulltulaTooltip extends React.Component {
   componentDidMount() {
     const node = ReactDOM.findDOMNode(this);
 
+    function get_age(props){
+      if (props.young && props.adult) {
+        return <div class="icon age"><img src="./assets/young.png" alt="" /><img src="./assets/adult.png" alt="" /></div>
+      } else if (props.young) {
+        return <div class="icon age"><img src="./assets/young.png" alt="" /></div>
+      } else if (props.adult) {
+        return <div class="icon age"><img src="./assets/adult.png" alt="" /></div>
+      }
+      return <div class="icon age"></div>
+    }
+
+    function get_time(props){
+      if (props.night) {
+        return <div class="icon"><img src="./assets/night.png" alt="" /></div>
+      } else {
+        return <div class="icon"><img src="./assets/daynight.png" alt="" /></div>
+      }
+    }
+
     Tippy(node, {
       size: 'small',
       maxWidth: '400px',
@@ -16,8 +35,9 @@ class SkulltulaTooltip extends React.Component {
         ReactDOM.render(
           <div>
             <h2>Skulltula #{this.props.id} - {this.props.title}</h2>
+            <div class="icons">{get_age(this.props)} {get_time(this.props)}</div>
             <img src={"./assets/skulltulas/skulltula-" + this.props.id + ".jpg"} className="tippy" alt=""/>
-            <p>{this.props.content}</p>
+            <p><b>Location:</b> {this.props.location}</p>
           </div> ,el );
         return el
       }

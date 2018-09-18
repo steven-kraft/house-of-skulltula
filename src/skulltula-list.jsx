@@ -13,7 +13,7 @@ class SkulltulaList extends React.Component {
         <ul id="skulltula-list">
           {skulltulas.map((skulltula) =>
             <li key={skulltula.id}>
-              <SkulltulaTooltip id={skulltula.id} title={skulltula.title} content={skulltula.content}>
+              <SkulltulaTooltip id={skulltula.id} title={skulltula.title} content={skulltula.content} location={skulltula.location} young={skulltula.young} adult={skulltula.adult} night={skulltula.night}>
                 <SkulltulaToken id={skulltula.id} />
               </SkulltulaTooltip>
             </li>

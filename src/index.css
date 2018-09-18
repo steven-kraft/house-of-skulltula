@@ -11,15 +11,17 @@ body {
   background-size: cover;
 }
 
+#root {
+  text-align: center;
+}
+
 #content {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 0px;
 }
 
 h1 {
+  margin: 10px;
   font-family: chiaro;
   text-align: center;
   color: white;
