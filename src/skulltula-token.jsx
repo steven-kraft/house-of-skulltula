@@ -9,7 +9,13 @@ var deactivate_sound = new Audio('/assets/deselect.wav');
 class SkulltulaToken extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isToggleOn: false};
+    if (localStorage.getItem("skulltulas") === null) {
+      this.state = {isToggleOn: false};
+    } else {
+      this.state = {
+        isToggleOn: JSON.parse(localStorage.getItem("skulltulas"))[this.props.skulltula.id - 1]
+      };
+    }
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -19,12 +25,11 @@ class SkulltulaToken extends React.Component {
     }));
     if (!this.state.isToggleOn) {
       activate_sound.play();
-      this.props.handler(1);
     }
     else {
       deactivate_sound.play();
-      this.props.handler(-1);
     }
+    this.props.handler(!this.state.isToggleOn, this.props.skulltula.id);
   }
 
   render() {

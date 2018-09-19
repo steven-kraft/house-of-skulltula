@@ -9,16 +9,34 @@ import skulltulas from './skulltula-data.js'
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {active_skulltulas: 0}
+    var tokens = 0;
+    if (localStorage.getItem("skulltulas")) {
+      var storage = JSON.parse(localStorage.getItem("skulltulas"));
+      for(var i = 0; i < storage.length; ++i){if(storage[i] === true){tokens++;}}
+    }
+    this.state = {active_skulltulas: tokens}
     this.handler = this.handler.bind(this);
   }
 
-  handler(number){
+  handler(status, id){
+    var number = (status) ? 1 : -1
     this.setState({
       active_skulltulas: this.state.active_skulltulas + number
     })
+    var storage = JSON.parse(localStorage.getItem("skulltulas"));
+    storage[id - 1] = status;
+    localStorage.setItem("skulltulas", JSON.stringify(storage));
   }
 
+  setupStorage(){
+    if (localStorage.getItem("skulltulas") === null) {
+      var storage = [];
+      for (var i = 0; i < 100; i++) {
+          storage[i] = false;
+      }
+      localStorage.setItem("skulltulas", JSON.stringify(storage));
+    }
+  }
   render() {
     return (
       <div id="content">
@@ -28,6 +46,7 @@ class App extends React.Component {
             <SkulltulaToken key={skulltula.id} skulltula={skulltula} handler={this.handler} />
           )}
         </SkulltulaList>
+        {this.setupStorage()}
       </div>
     )
   }

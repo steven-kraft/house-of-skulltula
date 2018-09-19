@@ -3,7 +3,7 @@ import './skulltula-list.css';
 
 import './skulltula-counter.jsx'
 
-class SkulltulaList extends React.Component {
+class SkulltulaList extends React.Component {  
   render() {
     return (
       <div>
