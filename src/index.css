@@ -1,10 +1,10 @@
 @font-face {
     font-family: chiaro;
-    src: url(/assets/chiaro.otf);
+    src: url(chiaro.otf);
 }
 
 body {
-  background: url("/assets/background.jpg") no-repeat center center fixed;
+  background: url("background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

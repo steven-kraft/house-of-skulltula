@@ -1,18 +1,23 @@
 {
-  "name": "skulltula-tracker",
+  "name": "house-of-skulltula",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://steven-kraft.github.io/house-of-skulltula/",
   "dependencies": {
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-scripts": "0.9.5",
     "tippy.js": "2.6.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }

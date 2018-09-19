@@ -3,7 +3,7 @@ import './skulltula-list.css';
 
 import './skulltula-counter.jsx'
 
-class SkulltulaList extends React.Component {  
+class SkulltulaList extends React.Component {
   render() {
     return (
       <div>
@@ -11,7 +11,7 @@ class SkulltulaList extends React.Component {
           {this.props.children}
         </ul>
         <div id="counter">
-            <img src="./assets/counter_icon.png" alt="" />
+            <img src="./assets/images/counter_icon.png" alt="" />
             <div className="counter">{this.props.active_skulltulas} / 100</div>
         </div>
       </div>

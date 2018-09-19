@@ -10,20 +10,20 @@ class SkulltulaTooltip extends React.Component {
 
     function get_age(props){
       if (props.young && props.adult) {
-        return <div className="icon age"><img src="./assets/young.png" alt="" /><img src="./assets/adult.png" alt="" /></div>
+        return <div className="icon age"><img src="./assets/images/young.png" alt="" /><img src="./assets/images/adult.png" alt="" /></div>
       } else if (props.young) {
-        return <div className="icon age"><img src="./assets/young.png" alt="" /></div>
+        return <div className="icon age"><img src="./assets/images/young.png" alt="" /></div>
       } else if (props.adult) {
-        return <div className="icon age"><img src="./assets/adult.png" alt="" /></div>
+        return <div className="icon age"><img src="./assets/images/adult.png" alt="" /></div>
       }
       return <div className="icon age"></div>
     }
 
     function get_time(props){
       if (props.night) {
-        return <div className="icon"><img src="./assets/night.png" alt="" /></div>
+        return <div className="icon"><img src="./assets/images/night.png" alt="" /></div>
       } else {
-        return <div className="icon"><img src="./assets/daynight.png" alt="" /></div>
+        return <div className="icon"><img src="./assets/images/daynight.png" alt="" /></div>
       }
     }
 
@@ -36,7 +36,7 @@ class SkulltulaTooltip extends React.Component {
           <div>
             <h2>Skulltula #{this.props.id} - {this.props.title}</h2>
             <div className="icons">{get_age(this.props)} {get_time(this.props)}</div>
-            <img src={"./assets/skulltulas/skulltula-" + this.props.id + ".jpg"} className="tippy" alt=""/>
+            <img src={"./assets/images/skulltulas/skulltula-" + this.props.id + ".jpg"} className="tippy" alt=""/>
             <p><b>Location:</b> {this.props.location}</p>
           </div> ,el );
         return el
