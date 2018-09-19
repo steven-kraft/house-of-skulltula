@@ -1,19 +1,20 @@
 import React from 'react';
 import './skulltula-list.css';
 
-import SkulltulaToken from "./skulltula-token.jsx";
-import skulltulas from './skulltula-data.js'
 import './skulltula-counter.jsx'
-
 
 class SkulltulaList extends React.Component {
   render() {
     return (
+      <div>
         <ul id="skulltula-list">
-          {skulltulas.map((skulltula) =>
-            <SkulltulaToken key={skulltula.id} skulltula={skulltula} />
-          )}
+          {this.props.children}
         </ul>
+        <div id="counter">
+            <img src="./assets/counter_icon.png" alt="" />
+            <div className="counter">{this.props.active_skulltulas} / 100</div>
+        </div>
+      </div>
     )
   }
 }

@@ -19,11 +19,12 @@ class SkulltulaToken extends React.Component {
     }));
     if (!this.state.isToggleOn) {
       activate_sound.play();
+      this.props.handler(1);
     }
     else {
       deactivate_sound.play();
+      this.props.handler(-1);
     }
-    this.props.updateState();
   }
 
   render() {
