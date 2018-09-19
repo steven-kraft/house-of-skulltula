@@ -1,9 +1,10 @@
 import React from 'react';
 import './skulltula-token.css';
 
+import SkulltulaTooltip from './skulltula-tooltip';
+
 var activate_sound = new Audio('/assets/skulltula.wav');
 var deactivate_sound = new Audio('/assets/deselect.wav');
-console.log("test")
 
 class SkulltulaToken extends React.Component {
   constructor(props) {
@@ -22,15 +23,18 @@ class SkulltulaToken extends React.Component {
     else {
       deactivate_sound.play();
     }
+    this.props.updateState();
   }
 
   render() {
-    let className = 'token';
-    if (!this.state.isToggleOn) {
-      className += ' inactive'
-    }
+    let className = 'inactive'
+    if (this.state.isToggleOn) {className = 'active'}
     return (
-      <img src="./assets/token.png" alt="" className={className} onClick={this.handleClick} />
+      <li key={this.props.skulltula.id}>
+        <SkulltulaTooltip id={this.props.skulltula.id} title={this.props.skulltula.title} content={this.props.skulltula.content} location={this.props.skulltula.location} young={this.props.skulltula.young} adult={this.props.skulltula.adult} night={this.props.skulltula.night}>
+          <img src="./assets/token.png" alt="" className={"token " + className} onClick={this.handleClick} />
+        </SkulltulaTooltip>
+      </li>
     )
   }
 }

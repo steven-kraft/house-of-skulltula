@@ -1,0 +1,7 @@
+.counter {
+  font-family: chiaro;
+  color: white;
+  font-size: 2em;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}

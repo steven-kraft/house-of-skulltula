@@ -1,25 +1,19 @@
 import React from 'react';
-import SkulltulaToken from "./skulltula-token.jsx";
-import SkulltulaTooltip from './skulltula-tooltip';
-import skulltulas from './skulltula-data.js'
 import './skulltula-list.css';
 
-class SkulltulaList extends React.Component {
+import SkulltulaToken from "./skulltula-token.jsx";
+import skulltulas from './skulltula-data.js'
+import './skulltula-counter.jsx'
 
+
+class SkulltulaList extends React.Component {
   render() {
-    console.log("list loaded")
     return (
-      <div>
         <ul id="skulltula-list">
           {skulltulas.map((skulltula) =>
-            <li key={skulltula.id}>
-              <SkulltulaTooltip id={skulltula.id} title={skulltula.title} content={skulltula.content} location={skulltula.location} young={skulltula.young} adult={skulltula.adult} night={skulltula.night}>
-                <SkulltulaToken id={skulltula.id} />
-              </SkulltulaTooltip>
-            </li>
+            <SkulltulaToken key={skulltula.id} skulltula={skulltula} />
           )}
         </ul>
-      </div>
     )
   }
 }
