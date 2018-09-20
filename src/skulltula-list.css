@@ -15,3 +15,16 @@
 #skulltula-listli {
     display: inline-block; /*necessary*/
 }
+
+.counter {
+  font-family: chiaro;
+  color: white;
+  font-size: 2em;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.gold {
+  color: gold;
+  -webkit-text-stroke-color: #FFC300;
+}

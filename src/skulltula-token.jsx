@@ -5,6 +5,7 @@ import SkulltulaTooltip from './skulltula-tooltip';
 
 var activate_sound = new Audio('./assets/skulltula.wav');
 var deactivate_sound = new Audio('./assets/deselect.wav');
+var complete_sound = new Audio('./assets/complete.wav')
 
 class SkulltulaToken extends React.Component {
   constructor(props) {
@@ -23,13 +24,14 @@ class SkulltulaToken extends React.Component {
     this.setState(state => ({
       isToggleOn: !state.isToggleOn
     }));
-    if (!this.state.isToggleOn) {
+    var number = this.props.handler(!this.state.isToggleOn, this.props.skulltula.id);
+    if (!this.state.isToggleOn && number === 100) {
+      complete_sound.play();
+    } else if (!this.state.isToggleOn) {
       activate_sound.play();
-    }
-    else {
+    } else {
       deactivate_sound.play();
     }
-    this.props.handler(!this.state.isToggleOn, this.props.skulltula.id);
   }
 
   render() {

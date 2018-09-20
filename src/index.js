@@ -20,12 +20,12 @@ class App extends React.Component {
 
   handler(status, id){
     var number = (status) ? 1 : -1
-    this.setState({
-      active_skulltulas: this.state.active_skulltulas + number
-    })
+    var tokens = this.state.active_skulltulas + number;
+    this.setState({active_skulltulas: tokens})
     var storage = JSON.parse(localStorage.getItem("skulltulas"));
     storage[id - 1] = status;
     localStorage.setItem("skulltulas", JSON.stringify(storage));
+    return tokens;
   }
 
   setupStorage(){
