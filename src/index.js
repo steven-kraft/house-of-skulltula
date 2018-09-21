@@ -5,6 +5,7 @@ import './index.css';
 import SkulltulaList from "./skulltula-list";
 import SkulltulaToken from "./skulltula-token.jsx";
 import skulltulas from './skulltula-data.js'
+import AudioMute from './audio-mute'
 
 class App extends React.Component {
   constructor(props){
@@ -14,8 +15,9 @@ class App extends React.Component {
       var storage = JSON.parse(localStorage.getItem("skulltulas"));
       for(var i = 0; i < storage.length; ++i){if(storage[i] === true){tokens++;}}
     }
-    this.state = {active_skulltulas: tokens}
+    this.state = {active_skulltulas: tokens, mute: false}
     this.handler = this.handler.bind(this);
+    this.toggle_mute = this.toggle_mute.bind(this);
   }
 
   handler(status, id){
@@ -26,6 +28,10 @@ class App extends React.Component {
     storage[id - 1] = status;
     localStorage.setItem("skulltulas", JSON.stringify(storage));
     return tokens;
+  }
+
+  toggle_mute(){
+    this.setState({mute: !this.state.mute})
   }
 
   setupStorage(){
@@ -40,10 +46,11 @@ class App extends React.Component {
   render() {
     return (
       <div id="content">
+        <AudioMute mute={this.state.mute} toggleMute={this.toggle_mute} />
         <h1>House of Skulltula</h1>
         <SkulltulaList active_skulltulas={this.state.active_skulltulas}>
           {skulltulas.map((skulltula) =>
-            <SkulltulaToken key={skulltula.id} skulltula={skulltula} handler={this.handler} />
+            <SkulltulaToken key={skulltula.id} skulltula={skulltula} handler={this.handler} mute={this.state.mute} />
           )}
         </SkulltulaList>
         {this.setupStorage()}

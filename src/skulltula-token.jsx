@@ -25,12 +25,14 @@ class SkulltulaToken extends React.Component {
       isToggleOn: !state.isToggleOn
     }));
     var number = this.props.handler(!this.state.isToggleOn, this.props.skulltula.id);
-    if (!this.state.isToggleOn && number === 100) {
-      complete_sound.play();
-    } else if (!this.state.isToggleOn) {
-      activate_sound.play();
-    } else {
-      deactivate_sound.play();
+    if(!this.props.mute) {
+      if (!this.state.isToggleOn && number === 100) {
+        complete_sound.play();
+      } else if (!this.state.isToggleOn) {
+        activate_sound.play();
+      } else {
+        deactivate_sound.play();
+      }
     }
   }
 

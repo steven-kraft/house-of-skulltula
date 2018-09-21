@@ -29,3 +29,9 @@ h1 {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
+
+.audio {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
