@@ -43,12 +43,20 @@ class App extends React.Component {
       localStorage.setItem("skulltulas", JSON.stringify(storage));
     }
   }
+
+  clearSkulltulas(){
+    if (confirm("Reset Skulltulas?")) {
+      localStorage.removeItem("skulltulas");
+      location.reload();
+    }
+  }
+
   render() {
     return (
       <div id="content">
         <AudioMute mute={this.state.mute} toggleMute={this.toggle_mute} />
         <h1>House of Skulltula</h1>
-        <SkulltulaList active_skulltulas={this.state.active_skulltulas}>
+        <SkulltulaList active_skulltulas={this.state.active_skulltulas} clear_skulltulas={this.clearSkulltulas} >
           {skulltulas.map((skulltula) =>
             <SkulltulaToken key={skulltula.id} skulltula={skulltula} handler={this.handler} mute={this.state.mute} />
           )}

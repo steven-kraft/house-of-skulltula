@@ -11,7 +11,7 @@ class SkulltulaList extends React.Component {
           {this.props.children}
         </ul>
         <div id="counter">
-            <img src="./assets/images/counter_icon.png" alt="" />
+            <img src="./assets/images/counter_icon.png" alt="" onClick={this.props.clear_skulltulas} />
             <div className={counter_class}>{this.props.active_skulltulas} / 100</div>
         </div>
       </div>
